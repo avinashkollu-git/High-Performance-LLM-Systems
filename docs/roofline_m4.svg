@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="340" font-family="monospace" font-size="13">
+<rect width="560" height="340" fill="#0d1117"/>
+<text x="280" y="30" fill="#e6edf3" font-size="15" font-weight="bold" text-anchor="middle">Decode ceiling: 8B model @ 120 GB/s  (m4)</text>
+<text x="280" y="50" fill="#8b949e" font-size="12" text-anchor="middle">batch-1, memory-bandwidth bound (tokens / second)</text>
+<line x1="60" y1="270" x2="530" y2="270" stroke="#30363d"/>
+<rect x="100" y="226.5" width="90" height="43.5" fill="#f85149" rx="3"/>
+<text x="145" y="218.5" fill="#e6edf3" text-anchor="middle">8 tok/s</text>
+<text x="145" y="290" fill="#8b949e" text-anchor="middle">fp16</text>
+<rect x="250" y="183.0" width="90" height="87.0" fill="#d29922" rx="3"/>
+<text x="295" y="175.0" fill="#e6edf3" text-anchor="middle">15 tok/s</text>
+<text x="295" y="290" fill="#8b949e" text-anchor="middle">int8</text>
+<rect x="400" y="96.1" width="90" height="173.9" fill="#3fb950" rx="3"/>
+<text x="445" y="88.1" fill="#e6edf3" text-anchor="middle">30 tok/s</text>
+<text x="445" y="290" fill="#8b949e" text-anchor="middle">q4</text>
+<text x="60" y="320" fill="#8b949e" font-size="11">4-bit quantization moves 4x fewer bytes/token than fp16 -> 4x the ceiling.</text>
+</svg>

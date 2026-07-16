@@ -1,0 +1,4 @@
+# Apple-Silicon LLM inference + plotting
+mlx>=0.18
+mlx-lm>=0.18
+matplotlib>=3.7   # only needed for bench/plot_results.py
