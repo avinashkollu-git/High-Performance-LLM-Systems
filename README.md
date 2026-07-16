@@ -1,6 +1,6 @@
 <h1 align="center">HIGH-PERFORMANCE LLM SYSTEMS</h1>
 
-<p align="center"><b>Benchmarking and optimizing Llama-3 inference on Apple M4 silicon — a roofline performance model plus a runnable measurement harness.</b></p>
+<p align="center"><b>Benchmarking and optimizing Llama-3 inference on Apple M4 silicon: a roofline performance model plus a runnable measurement harness.</b></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Apple-Silicon-black?logo=apple">
@@ -26,12 +26,12 @@ max tokens/sec  =  memory_bandwidth (bytes/s)  /  model_weight_bytes
 
 This project makes that concrete for Apple's M4 family: a dependency-free **roofline
 model** computes the theoretical ceiling, and a **benchmark harness** measures what
-MLX actually achieves — so the gap between them is your optimization headroom.
+MLX actually achieves, so the gap between them is your optimization headroom.
 
 ## Why this matters (and how it ties to silicon)
 
-The same reasoning a silicon engineer uses — arithmetic intensity, the memory wall,
-roofline analysis, quantization to cut bytes-per-weight — is exactly what governs
+The same reasoning a silicon engineer uses (arithmetic intensity, the memory wall,
+roofline analysis, quantization to cut bytes-per-weight) is exactly what governs
 LLM inference on a real chip. This repo is that analysis applied end to end.
 
 ## Repository layout
@@ -50,7 +50,7 @@ High-Performance-LLM-Systems/
 
 ## The roofline model
 
-Runs with **no dependencies** — try it immediately:
+Runs with **no dependencies**: try it immediately:
 
 ```bash
 python3 bench/roofline.py --params 8 --chip m4
@@ -71,7 +71,7 @@ Memory bandwidth: 120 GB/s  (m4)
 
 These are **upper bounds** (100 % bandwidth, zero overhead). Real throughput sits
 below them; how far below tells you how efficient the runtime is. It also shows why
-4-bit quantization is the single biggest lever on a bandwidth-bound workload — it
+4-bit quantization is the single biggest lever on a bandwidth-bound workload, it
 cuts the bytes moved per token by 4× versus fp16.
 
 ### Apple M4 memory bandwidth (per Apple's published specs)
@@ -94,9 +94,9 @@ python bench/plot_results.py                 # measured vs roofline chart
 
 The harness reports, as medians over several runs:
 
-- **TTFT** — time to first token (prefill latency)
-- **decode** — steady-state tokens/second
-- **peak memory** — peak unified-memory footprint
+- **TTFT**: time to first token (prefill latency)
+- **decode**: steady-state tokens/second
+- **peak memory**: peak unified-memory footprint
 
 `results/` is intentionally shipped empty so every number there is measured on your
 own machine, never second-hand.
@@ -109,4 +109,4 @@ and honest, reproducible benchmarking.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE).
